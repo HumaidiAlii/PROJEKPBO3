@@ -1,0 +1,83 @@
+<!-- Sistem Penilaian Siswa Akhir Semester
+
+## Gambaran Umum
+
+Sistem Penilaian Siswa Akhir Semester adalah sebuah aplikasi web sederhana yang menghitung nilai akhir siswa berdasarkan nilai UTS, UAS, dan tugas. Aplikasi ini dibangun menggunakan HTML, CSS, dan JavaScript.
+
+## Cara Kerja
+
+1. **Pengguna memasukkan data siswa.** Pengguna memasukkan data siswa, seperti NIS, nama, kelas, nilai UTS, nilai UAS, dan nilai tugas.
+2. **Aplikasi menghitung nilai akhir siswa.** Aplikasi menghitung nilai akhir siswa dengan rumus:
+
+```
+nilai akhir = (nilai UTS + nilai UAS + nilai tugas) / 3
+```
+
+3. **Aplikasi menampilkan hasil penilaian siswa.** Aplikasi menampilkan hasil penilaian siswa, termasuk nilai akhir, predikat, dan nilai huruf.
+
+## Kode
+
+Berikut ini adalah kode HTML, CSS, dan JavaScript yang digunakan untuk membangun aplikasi: -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistem Penilaian Siswa Akhir Semester</title>
+    <link rel="icon" href="asset/sekolah-dasar-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left_side">
+        <h2>Hasil Penilaian</h2>
+        <div class="p_g_t">
+          <h2>NIS: <span class="NIS-SISWA"></span></h2>
+          <h2>Nama: <span class="Nama-Siswa"></span></h2>
+          <h2>Kelas: <span class="Kelas-Siswa"></span></h2>
+          <h2>Nilai Akhir: <span class="nilai-akhir"></span></h2>
+          <h2>Predikat: <span class="predikat"></span></h2>
+          <h2>Nilai Huruf: <span class="nilai-huruf"></span></h2>
+        </div>
+      </div>
+      <div class="content">
+        <div class="right_side">
+          <input type="text" id="nis" placeholder="NIS" pattern="[0-9]+" />
+          <input type="text" id="nama" placeholder="Nama Siswa" />
+          <input
+            type="text"
+            id="kelas"
+            placeholder="Kelas"
+            pattern="[a-zA-Z- ]+"
+          />
+          <input
+            type="number"
+            id="uts"
+            placeholder="Nilai UTS"
+            pattern="[0-9]*"
+          />
+          <input
+            type="number"
+            id="uas"
+            placeholder="Nilai UAS"
+            pattern="[0-9]*"
+          />
+          <input
+            type="number"
+            id="tugas"
+            placeholder="Nilai Tugas"
+            pattern="[0-9]*"
+          />
+          <button type="button" onclick="hitungNilaiAkhir()">
+            Hitung Nilai
+          </button>
+          <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+      </div>
+      <div class="result">
+        <h2></h2>
+      </div>
+    </div>
+    <script src="Main.js"></script>
+  </body>
+</html>
